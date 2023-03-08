@@ -198,15 +198,16 @@ $Magenta"
 		anew=yes
 		break
 	;;
-	"5") 
+	"6") 
 		clear
 $Magenta"
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 +           What port is activated               +
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 "$ENDS
-		echo "sudo lsof -PVn -iTCP | grep sshd | grep LISTEN"
 		echo "Here is the port which is activated"
+		echo "sudo lsof -PVn -iTCP | grep sshd | grep LISTEN"
+		echo ""
 		sudo lsof -PVn -iTCP | grep sshd | grep LISTEN
 		sleep 3
 		echo ""
