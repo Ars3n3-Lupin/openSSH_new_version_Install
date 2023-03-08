@@ -48,7 +48,8 @@ while [ "$anew" = yes ]; do
 			"Install dependances"
 			"Install openSSH-server && openSSH-client"
 			"Start ssh-latest.service"
-			"Check the version")
+			"Check the version"
+			"What port is activated")
 	PS3="$prompt"
 
 	select opt in "${options[@]}" "Quit";
@@ -192,6 +193,21 @@ $Magenta"
 		echo "Enter your actual port: "
 		read PORT
 		echo | nc localhost ${PORT}
+		sleep 3
+		echo ""
+		anew=yes
+		break
+	;;
+	"5") 
+		clear
+$Magenta"
+++++++++++++++++++++++++++++++++++++++++++++++++++
++           What port is activated               +
+++++++++++++++++++++++++++++++++++++++++++++++++++
+"$ENDS
+		echo "sudo lsof -PVn -iTCP | grep sshd | grep LISTEN"
+		echo "Here is the port which is activated"
+		sudo lsof -PVn -iTCP | grep sshd | grep LISTEN
 		sleep 3
 		echo ""
 		anew=yes
