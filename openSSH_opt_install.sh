@@ -206,6 +206,7 @@ $Magenta"
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 "$ENDS
 		echo "echo | nc localhost 22"
+		echo ""
 		echo "Enter your actual port: "
 		read PORT
 		echo | nc localhost ${PORT}
