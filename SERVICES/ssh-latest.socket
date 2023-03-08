@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenBSD Secure Shell server socket
+Before=ssh-latest.service
+Conflicts=ssh-latest.service
+ConditionPathExists=!/opt/openssh-latest/etc/sshd_not_to_be_r
+
+[Socket]
+ListenStream=2222
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

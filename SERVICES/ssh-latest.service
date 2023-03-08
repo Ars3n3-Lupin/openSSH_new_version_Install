@@ -1,0 +1,22 @@
+[Unit]
+Description=OpenBSD Secure Shell server
+Documentation=man:sshd(8) man:sshd_config(5)
+After=network.target auditd.service
+ConditionPathExists=!/opt/openssh-latest/etc/sshd_not_to_be_r
+
+[Service]
+EnvironmentFile=-/opt/openssh-latest/default/ssh
+ExecStartPre=/opt/openssh-latest/sbin/sshd -t
+ExecStart=/opt/openssh-latest/sbin/sshd -D $SSHD_OPTS
+ExecReload=/opt/openssh-latest/sbin/sshd -t
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=exec
+RuntimeDirectory=sshd-latest
+RuntimeDirectoryMode=0755
+
+[Install]
+WantedBy=multi-user.target
+Alias=sshd-latest.service
