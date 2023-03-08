@@ -1,6 +1,6 @@
 # openSSH_new_version_Install
 
-This is intllation steps to install openSSH new version.
+This is intllation steps to install openSSH new linux version .
 
 1. Download SERVICES folder and change owner of all files in SERVICES folder.
    sudo chown root:root ./SERVICES/*
