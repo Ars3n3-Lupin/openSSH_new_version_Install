@@ -49,7 +49,8 @@ while [ "$anew" = yes ]; do
 			"Install openSSH-server && openSSH-client"
 			"Start ssh-latest.service"
 			"What port is activated"
-			"Check the version")
+			"Check the version"
+			"SSHD proceses running")
 	PS3="$prompt"
 
 	select opt in "${options[@]}" "Quit";
@@ -212,6 +213,21 @@ $Magenta"
 		echo | nc localhost ${PORT}
 		sleep 3
 		echo ""
+		anew=yes
+		break
+	;;
+	"7") 
+		clear
+$Magenta"
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++         There are two different sshd -D daemon processes       +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"$ENDS
+		echo "ps -ef --forest | grep "sshd -D""
+		echo ""
+		sudo ps -ef --forest | grep "sshd -D"
+		echo ""
+		sleep 3
 		anew=yes
 		break
 	;;
