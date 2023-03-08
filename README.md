@@ -23,3 +23,5 @@ This is intllation steps to install openSSH new linux version .
    
    Original repository is here
    https://gist.github.com/jtmoon79/745e6df63dd14b9f2d17a662179e953a
+
+   I created this file because I don't like to copy and paste again and again the same commands
