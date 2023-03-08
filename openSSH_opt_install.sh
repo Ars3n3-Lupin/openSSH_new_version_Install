@@ -47,7 +47,8 @@ while [ "$anew" = yes ]; do
 	options=("Update && upgrade a system"
 			"Install dependances"
 			"Install openSSH-server && openSSH-client"
-			"Start ssh-latest.service")
+			"Start ssh-latest.service"
+			"Check the version")
 	PS3="$prompt"
 
 	select opt in "${options[@]}" "Quit";
@@ -178,6 +179,22 @@ $Magenta"
 		clear
 		anew=yes
 		clear
+		break
+	;;
+	"5") 
+		clear
+$Magenta"
+++++++++++++++++++++++++++++++++++++++++++++++++++
++           Check an installed vrsion            +
+++++++++++++++++++++++++++++++++++++++++++++++++++
+"$ENDS
+		echo "echo | nc localhost 22"
+		echo "Enter your actual port: "
+		read PORT
+		echo | nc localhost ${PORT}
+		sleep 3
+		echo ""
+		anew=yes
 		break
 	;;
 		$((${#options[@]}+1))) echo "Goodbye!"; 
