@@ -167,8 +167,11 @@ $Magenta"
 		sudo systemctl disable ssh.service
 		sudo systemctl disable ssh.socket
 		sudo systemctl daemon-reload
-		clear
-		sudo systemctl status ssh.service
+        sudo systemctl start ssh-latest.service
+        sudo systemctl stop ssh-latest.socket
+        sudo systemctl disable ssh-latest.socket
+        sudo systemctl daemon-reload
+        sudo systemctl status ssh.service
 		sleep 3
 		clear
 		anew=yes
