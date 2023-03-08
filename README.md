@@ -12,4 +12,14 @@ This is intllation steps to install openSSH new linux version .
 
    The last version of openSSH follow this link
    https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
+
+3. There is no needs to uninstall old openSSH version.
+   After installation it will be stoped && disabled.
+
+   If you want to check installed openSSH running version
+   just type 
+   echo | nc localhost 22
+   Instead of port 22 use your actual allowed port.  
    
+   Original repository is here
+   https://gist.github.com/jtmoon79/745e6df63dd14b9f2d17a662179e953a
