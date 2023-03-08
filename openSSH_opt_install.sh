@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# Installation folder
 # /opt/openssh-
 #
 #
@@ -26,11 +26,11 @@ $Blue"
 ********************************************************************************
 +                   This is an openSSH installation file                       +
 +                                                                              +
-+   1. At first updating system                                                +
-+   2. At second install dependances                                           +
-+   3. At third compiling and install new version openSSH /opt                 +
-+   4. At fiveth copy ssh.service file                                         +
-+   5. At fiveth start ssh-latest.service                                      +
++   0. Copy four files from SERVICES folder to /usr/lib/systemd/system/        +
++   1. First, a system update && upgrade                                       +
++   2. Second, installation dependencies                                       +
++   3. Third, compiling and install new version openSSH /opt                   +
++   4. Fourth, start ssh-latest.service                                        +
 +                                                                              +
 ********************************************************************************
 "$ENDS
